@@ -1,0 +1,50 @@
+{
+    "name": "vjik/demo-codeception-db-populator",
+    "type": "project",
+    "description": "Database Populator for Codeception DB Module demo project",
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Sergei Predvoditelev",
+            "email": "sergey.predvoditelev@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": "^8.0",
+        "psr/event-dispatcher": "^1.0",
+        "psr/log": "1.1",
+        "vjik/simple-type-caster": "^0.2.2",
+        "vlucas/phpdotenv": "^5.3",
+        "yiisoft/aliases": "^2.0",
+        "yiisoft/db": "3.0.x-dev",
+        "yiisoft/db-mysql": "3.0.x-dev",
+        "yiisoft/definitions": "3.0.x-dev",
+        "yiisoft/di": "3.0.x-dev",
+        "yiisoft/profiler": "^1.0",
+        "yiisoft/view": "^3.0",
+        "yiisoft/yii-console": "3.0.x-dev",
+        "yiisoft/yii-db-migration": "1.0.x-dev",
+        "yiisoft/yii-event": "^1.0"
+    },
+    "require-dev": {
+        "codeception/codeception": "^4.1",
+        "codeception/module-cli": "^1.1",
+        "codeception/module-db": "^1.1",
+        "vjik/codeception-db-populator": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "App\\Tests\\": "tests"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}

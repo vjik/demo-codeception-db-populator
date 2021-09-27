@@ -1,0 +1,12 @@
+suite_namespace: App\Tests\Cli
+actor: CliTester
+modules:
+  enabled:
+    - Cli
+    - Db:
+        dsn: 'mysql:host=%DB_HOST%;dbname=%DB_NAME%'
+        user: '%DB_USERNAME%'
+        password: '%DB_PASSWORD%'
+    - Vjik\Codeception\DatabasePopulator\Module:
+        dumpsPath: 'tests/%DUMPS_DIR%'
+        rowsPath: 'tests/%ROWS_DIR%'

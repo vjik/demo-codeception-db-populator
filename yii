@@ -1,0 +1,36 @@
+#!/usr/bin/env php
+<?php
+
+declare(strict_types=1);
+
+use Dotenv\Dotenv;
+use Yiisoft\Di\Container;
+use Yiisoft\Yii\Console\Application;
+use Yiisoft\Yii\Console\ExitCode;
+use Yiisoft\Yii\Console\Output\ConsoleBufferedOutput;
+
+require_once __DIR__ . '/vendor/autoload.php';
+
+Dotenv::createMutable(
+    __DIR__ . (getenv('APP_ENV') === 'test' ? '/tests' : '/')
+)->load();
+
+$container = new Container(
+    require __DIR__ . '/config/definitions.php',
+);
+
+$container->get(\Yiisoft\Yii\Db\Migration\Command\CreateCommand::class);
+
+$application = $container->get(Application::class);
+
+$exitCode = ExitCode::UNSPECIFIED_ERROR;
+
+try {
+    $application->start();
+    $exitCode = $application->run(null, new ConsoleBufferedOutput());
+} catch (Error $error) {
+    $application->renderThrowable($error, new ConsoleBufferedOutput());
+} finally {
+    $application->shutdown($exitCode);
+    exit($exitCode);
+}
