@@ -8,7 +8,7 @@ rem Create dumps directory if not exist
 IF NOT EXIST "%~dp0%DUMPS_DIR%" mkdir "%~dp0%DUMPS_DIR%"
 
 rem Recreate test database
-mysql -u%DB_USERNAME% -p%DB_PASSWORD% -e "DROP DATABASE IF EXISTS %DB_NAME%%
+mysql -u%DB_USERNAME% -p%DB_PASSWORD% -e "DROP DATABASE IF EXISTS %DB_NAME%"
 mysql -u%DB_USERNAME% -p%DB_PASSWORD% -e "CREATE DATABASE %DB_NAME%"
 
 rem Run migrations
