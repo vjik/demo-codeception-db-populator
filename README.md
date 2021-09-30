@@ -4,6 +4,8 @@
 [![Powered by Yii3](https://img.shields.io/badge/Powered_by-Yii3-green.svg?style=flat)](https://www.yiiframework.com/yii3-progress)
 [![License](https://poser.pugx.org/vjik/codeception-db-populator/license)](/LICENSE)
 
+Minimal console application based on Yii3 for demonstration work with [Database Populator for Codeception](https://github.com/vjik/codeception-db-populator). 
+
 ## Requirements
 
 - PHP 8.0 or higher.
