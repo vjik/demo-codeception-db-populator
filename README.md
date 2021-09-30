@@ -4,7 +4,7 @@
 [![Powered by Yii3](https://img.shields.io/badge/Powered_by-Yii3-green.svg?style=flat)](https://www.yiiframework.com/yii3-progress)
 [![License](https://poser.pugx.org/vjik/codeception-db-populator/license)](/LICENSE)
 
-Minimal console application based on Yii3 for demonstration work with [Database Populator for Codeception](https://github.com/vjik/codeception-db-populator). 
+Minimal console application based on Yii3 for demonstration work with [Database Populator for Codeception](https://github.com/vjik/codeception-db-populator).
 
 ## Requirements
 
@@ -20,22 +20,28 @@ MySQL configuration:
 
 > Note: you can change MySQL configuration in `./.env` file that contain environment variables.
 
+## Applying migrations
+
+```shell
+./yii migrate/up
+```
+
 ## Console commands
 
 Author:
 
-- `./yii author/create <name>` 
+- `./yii author/create <name>`
 - `./yii author/delete <id>`
 
 Category:
 
-- `./yii category/create <name>` 
+- `./yii category/create <name>`
 - `./yii category/delete <id>`
 
 Post:
 
-- `./yii post/create <name> [-a|--author <authorId>] [-c|--category <categoryId>]` 
-- `./yii post/delete <id>` 
+- `./yii post/create <name> [-a|--author <authorId>] [-c|--category <categoryId>]`
+- `./yii post/delete <id>`
 
 ## Creating dumps for tests
 
