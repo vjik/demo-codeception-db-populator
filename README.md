@@ -4,6 +4,45 @@
 [![Powered by Yii3](https://img.shields.io/badge/Powered_by-Yii3-green.svg?style=flat)](https://www.yiiframework.com/yii3-progress)
 [![License](https://poser.pugx.org/vjik/codeception-db-populator/license)](/LICENSE)
 
+## Requirements
+
+- PHP 8.0 or higher.
+- MySQL databasee.
+
+MySQL configuration:
+
+- host: `127.0.0.1`
+- name: `dbpopulator`
+- user: `root`
+- password: `root`
+
+> Note: you can change MySQL configuration in `./.env` file that contain environment variables.
+
+## Console commands
+
+Author:
+
+- `./yii author/create <name>` 
+- `./yii author/delete <id>`
+
+Category:
+
+- `./yii category/create <name>` 
+- `./yii category/delete <id>`
+
+Post:
+
+- `./yii post/create <name> [-a|--author <authorId>] [-c|--category <categoryId>]` 
+- `./yii post/delete <id>` 
+
+## Creating dumps for tests
+
+Windows:
+
+```shell
+./tests/make-dumps.bat
+```
+
 ## Testing
 
 Require MySQL database with configuration:
