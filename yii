@@ -19,8 +19,6 @@ $container = new Container(
     require __DIR__ . '/config/definitions.php',
 );
 
-$container->get(\Yiisoft\Yii\Db\Migration\Command\CreateCommand::class);
-
 $application = $container->get(Application::class);
 
 $exitCode = ExitCode::UNSPECIFIED_ERROR;
