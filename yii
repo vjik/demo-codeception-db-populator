@@ -5,6 +5,7 @@ declare(strict_types=1);
 
 use Dotenv\Dotenv;
 use Yiisoft\Di\Container;
+use Yiisoft\Di\ContainerConfig;
 use Yiisoft\Yii\Console\Application;
 use Yiisoft\Yii\Console\ExitCode;
 use Yiisoft\Yii\Console\Output\ConsoleBufferedOutput;
@@ -16,7 +17,9 @@ Dotenv::createMutable(
 )->load();
 
 $container = new Container(
-    require __DIR__ . '/config/definitions.php',
+    ContainerConfig::create()->withDefinitions(
+        require __DIR__ . '/config/definitions.php'
+    )
 );
 
 $application = $container->get(Application::class);
